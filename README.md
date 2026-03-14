@@ -1,4 +1,4 @@
-# Claude Code 自己進化システム
+# Claude Code & Antigravity 自己進化システム
 
 汎用Agent Team設定 + 自動学習・進化の仕組み
 
