@@ -1,5 +1,5 @@
 # 汎用 Agent Team Configuration
-# 最終更新: 自動管理（/evolve コマンドで更新）
+# 最終更新: 自動管理（/learn コマンドで更新）
 
 ---
 
@@ -114,7 +114,7 @@
 - Flutter Web の起動は `nohup flutter run -d web-server --web-port 8081` を使う（`&`だけでは即終了する）
 - GoRouter では子画面・詳細画面への遷移に `context.push()`、ルート切替（ログイン→ダッシュボード等）に `context.go()` を使い分ける
 - デモモード導入時は `grep -r "authStateProvider\|FirebaseAuth"` で Firebase依存を全洗い出ししてから対応する
-<!-- /evolve コマンドにより自動追記されるセクション -->
+<!-- /learn コマンドにより自動追記されるセクション -->
 <!-- 形式: - [YYYY-MM-DD] ルール内容 -->
 
 ---
