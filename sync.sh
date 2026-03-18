@@ -11,6 +11,14 @@ NC='\033[0m'
 
 DOTFILES_DIR="$HOME/dotfiles"
 
+# ~/.claude の変更を dotfiles に反映（Windows ではシンボリックリンクの代わり）
+echo -e "${GREEN}=== ~/.claude を dotfiles に同期中 ===${NC}"
+cp -f ~/.claude/CLAUDE.md "$DOTFILES_DIR/.claude/CLAUDE.md" 2>/dev/null || true
+cp -f ~/.claude/settings.json "$DOTFILES_DIR/.claude/settings.json" 2>/dev/null || true
+cp -f ~/.claude/hooks/session_logger.py "$DOTFILES_DIR/.claude/hooks/session_logger.py" 2>/dev/null || true
+cp -f ~/.claude/commands/learn.md "$DOTFILES_DIR/.claude/commands/learn.md" 2>/dev/null || true
+cp -f ~/.claude/commands/skill-save.md "$DOTFILES_DIR/.claude/commands/skill-save.md" 2>/dev/null || true
+
 cd "$DOTFILES_DIR"
 
 # 変更があるか確認
