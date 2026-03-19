@@ -116,14 +116,18 @@
 - デモモード導入時は `grep -r "authStateProvider\|FirebaseAuth"` で Firebase依存を全洗い出ししてから対応する
 
 ### 2026-03-18 SingleRepExplorer / Docker + Shiny開発から
-- Docker内Shinyのモジュールコードを変更したら `pkill -HUP` ではなく **`docker restart <container>`** で完全再起動（Rワーカープロセスが新コードをロードするのはプロセス再起動時のみ）
-- Windows環境では **`docker exec -it` は失敗**する（non-TTY）。必ず `docker exec -i` のみ使うこと
-- Shinyアプリの `renderPlot()` 出力キャンバスは Chrome MCP の **`zoom` ツールで白く返る**。plot取得には `screenshot` を使うこと
-- コンテナへの大容量ファイル転送は Chrome MCP `file_upload` ではなく **`docker cp`** を使うこと
-- Shinyクラッシュの根本原因は **`/var/log/shiny-server/*.log`** を `ls -lt` で最新ファイルを特定し `grep "Warning: Error"` で調べる
-- R Shinyで「could not find function」エラーが出たら **namespace衝突**を疑う（例: `immunarch` が `data.table` をロードして `:=` を上書き、`S4Vectors` が `dplyr::first()` を上書き等）
-<!-- /learn コマンドにより自動追記されるセクション -->
-<!-- 形式: - [YYYY-MM-DD] ルール内容 -->
+ - Docker内Shinyのモジュールコードを変更したら `pkill -HUP` ではなく **`docker restart <container>`** で完全再起動（Rワーカープロセスが新コードをロードするのはプロセス再起動時のみ）
+ - Windows環境では **`docker exec -it` は失敗**する（non-TTY）。必ず `docker exec -i` のみ使うこと
+ - Shinyアプリの `renderPlot()` 出力キャンバスは Chrome MCP の **`zoom` ツールで白く返る**。plot取得には `screenshot` を使うこと
+ - コンテナへの大容量ファイル転送は Chrome MCP `file_upload` ではなく **`docker cp`** を使うこと
+ - Shinyクラッシュの根本原因は **`/var/log/shiny-server/*.log`** を `ls -lt` で最新ファイルを特定し `grep "Warning: Error"` で調べる
+ - R Shinyで「could not find function」エラーが出たら **namespace衝突**を疑う（例: `immunarch` が `data.table` をロードして `:=` を上書き、`S4Vectors` が `dplyr::first()` を上書き等）
+
+### 2026-03-19 WSL / Google Drive (G:) マウントトラブル
+ - WSLから `/mnt/g` にアクセスした際に `failed 19 (ENODEV)` が出た場合はマウントが解除されている。**`sudo mount -t drvfs G: /mnt/g`** で手動マウントすること
+ - `git clone` をGoogle Drive内のディレクトリに行う際、WSL側からだとパーミッションエラーで失敗することが多いため、**Windows側のPowerShell**等で実行するのが確実
+ <!-- /learn コマンドにより自動追記されるセクション -->
+ <!-- 形式: - [YYYY-MM-DD] ルール内容 -->
 
 ---
 
