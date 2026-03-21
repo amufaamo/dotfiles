@@ -76,7 +76,7 @@ description: セッションの振り返り・記録・進化提案を1コマン
 Phase 5で変更が適用された場合（CLAUDE.mdが更新またはSkillが保存された）、
 以下のコマンドを実行してGitHubに自動でpushしてください：
 ```bash
-bash ~/dotfiles/sync.sh
+bash ~/ai-rules/sync.sh
 ```
 
 pushが成功したら：

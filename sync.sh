@@ -1,7 +1,7 @@
 #!/bin/bash
 # sync.sh
-# dotfilesの変更をGitHubに同期する
-# 使い方: bash ~/dotfiles/sync.sh
+# ai-rulesの変更をGitHubに同期する
+# 使い方: bash ~/ai-rules/sync.sh
 
 set -euo pipefail
 
@@ -9,17 +9,17 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-DOTFILES_DIR="$HOME/dotfiles"
+AI_RULES_DIR="$HOME/ai-rules"
 
-# ~/.claude の変更を dotfiles に反映（Windows ではシンボリックリンクの代わり）
-echo -e "${GREEN}=== ~/.claude を dotfiles に同期中 ===${NC}"
-cp -f ~/.claude/CLAUDE.md "$DOTFILES_DIR/.claude/CLAUDE.md" 2>/dev/null || true
-cp -f ~/.claude/settings.json "$DOTFILES_DIR/.claude/settings.json" 2>/dev/null || true
-cp -f ~/.claude/hooks/session_logger.py "$DOTFILES_DIR/.claude/hooks/session_logger.py" 2>/dev/null || true
-cp -f ~/.claude/commands/learn.md "$DOTFILES_DIR/.claude/commands/learn.md" 2>/dev/null || true
-cp -f ~/.claude/commands/skill-save.md "$DOTFILES_DIR/.claude/commands/skill-save.md" 2>/dev/null || true
+# ~/.claude の変更を ai-rules に反映（Windows ではシンボリックリンクの代わり）
+echo -e "${GREEN}=== ~/.claude を ai-rules に同期中 ===${NC}"
+cp -f ~/.claude/CLAUDE.md "$AI_RULES_DIR/.claude/CLAUDE.md" 2>/dev/null || true
+cp -f ~/.claude/settings.json "$AI_RULES_DIR/.claude/settings.json" 2>/dev/null || true
+cp -f ~/.claude/hooks/session_logger.py "$AI_RULES_DIR/.claude/hooks/session_logger.py" 2>/dev/null || true
+cp -f ~/.claude/commands/learn.md "$AI_RULES_DIR/.claude/commands/learn.md" 2>/dev/null || true
+cp -f ~/.claude/commands/skill-save.md "$AI_RULES_DIR/.claude/commands/skill-save.md" 2>/dev/null || true
 
-cd "$DOTFILES_DIR"
+cd "$AI_RULES_DIR"
 
 # 変更があるか確認
 if git diff --quiet && git diff --staged --quiet; then
