@@ -4,7 +4,7 @@
 
 ## ファイル構成
 
-dotfiles/
+ai-rules/
 ├── .claude/
 │   ├── CLAUDE.md              全プロジェクト共通の汎用ルール（自動進化）
 │   ├── settings.json          Agent Team有効化・Hooks設定
@@ -22,16 +22,16 @@ dotfiles/
 
 作業終了後         → /learn
 うまくいったとき   → /skill-save
-複数PC間の同期     → bash ~/dotfiles/sync.sh
+複数PC間の同期     → bash ~/ai-rules/sync.sh
 
 ## 新しいPCへのセットアップ
 
-git clone https://github.com/amufaamo/dotfiles.git ~/dotfiles
-bash ~/dotfiles/install.sh
+git clone https://github.com/amufaamo/ai-rules.git ~/ai-rules
+bash ~/ai-rules/install.sh
 
 ## 別のPCで最新を受け取る
 
-cd ~/dotfiles && git pull
+cd ~/ai-rules && git pull
 
 ## 設計思想
 
