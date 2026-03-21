@@ -126,6 +126,10 @@
 ### 2026-03-19 WSL / Google Drive (G:) マウントトラブル
  - WSLから `/mnt/g` にアクセスした際に `failed 19 (ENODEV)` が出た場合はマウントが解除されている。**`sudo mount -t drvfs G: /mnt/g`** で手動マウントすること
  - `git clone` をGoogle Drive内のディレクトリに行う際、WSL側からだとパーミッションエラーで失敗することが多いため、**Windows側のPowerShell**等で実行するのが確実
+
+### 2026-03-21 project.md誤記入防止
+ - AIがproject.mdに`~/.claude/`システムの説明を書き込まないよう、CLAUDE.mdの「Step 7: project.mdルール」に「記載してはいけない内容」セクションを追加した
+ - project.mdには**プロジェクト固有の技術的内容のみ**を記載し、グローバル設定（~/.claude/の説明、スラッシュコマンド、自律進化システム、Agent Team編成ルール）は絶対に書かない
  <!-- /learn コマンドにより自動追記されるセクション -->
  <!-- 形式: - [YYYY-MM-DD] ルール内容 -->
 
