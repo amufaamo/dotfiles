@@ -93,7 +93,10 @@ description: セッションの振り返り・記録・進化提案を1コマン
 Phase 5で変更が適用された場合（CLAUDE.mdが更新またはSkillが保存された）、
 以下のコマンドを実行してGitHubに自動でpushしてください：
 ```bash
-bash ~/ai-rules/sync.sh
+# sync.shの場所をシンボリックリンクから自動検出して実行
+CLAUDE_LINK="$(readlink ~/.claude/CLAUDE.md 2>/dev/null)" && \
+  bash "$(dirname "$(dirname "$CLAUDE_LINK")")/sync.sh" || \
+  echo "sync.sh が見つかりませんでした。手動で git push してください。"
 ```
 
 pushが成功したら：
