@@ -25,6 +25,8 @@ echo -e "${GREEN}=== ~/.claude を ai-rules に同期中 ===${NC}"
 cp -f ~/.claude/CLAUDE.md "$AI_RULES_DIR/.claude/CLAUDE.md" 2>/dev/null || true
 cp -f ~/.claude/settings.json "$AI_RULES_DIR/.claude/settings.json" 2>/dev/null || true
 cp -f ~/.claude/hooks/session_logger.py "$AI_RULES_DIR/.claude/hooks/session_logger.py" 2>/dev/null || true
+cp -f ~/.claude/hooks/session_start.sh "$AI_RULES_DIR/.claude/hooks/session_start.sh" 2>/dev/null || true
+cp -f ~/.claude/hooks/auto_sync.sh "$AI_RULES_DIR/.claude/hooks/auto_sync.sh" 2>/dev/null || true
 cp -f ~/.claude/commands/learn.md "$AI_RULES_DIR/.claude/commands/learn.md" 2>/dev/null || true
 cp -f ~/.claude/commands/skill-save.md "$AI_RULES_DIR/.claude/commands/skill-save.md" 2>/dev/null || true
 
